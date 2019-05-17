@@ -10,7 +10,10 @@ public class AuthenticationEnricherFactory {
 		AuthenticationEnricher ae = null;
 		
 		String type = authConfig.getType();
-		if ("OAuth2XSUAA".equalsIgnoreCase(type)) {
+		// TODO - add the new auth service here
+		if ("OAuth2Bearer".equalsIgnoreCase(type)) {
+			ae = new OAuth2BearerEnricher(authConfig.getOauth2bearer());
+		} else if ("OAuth2XSUAA".equalsIgnoreCase(type)) {
 			ae = new OAuth2XSUAAEnricher(authConfig.getOauth2xsuaa());
 		} else if ("none".equalsIgnoreCase(type) || "null".equalsIgnoreCase(type)) {
 			ae = new NullEnricher();

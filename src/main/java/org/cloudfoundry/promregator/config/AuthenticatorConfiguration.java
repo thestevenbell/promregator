@@ -7,6 +7,7 @@ public class AuthenticatorConfiguration {
 
 	private OAuth2XSUAAAuthenticationConfiguration oauth2xsuaa;
 	
+	private OAuth2BearerAuthenticationConfiguration oauth2bearer;
 	
 	public String getType() {
 		return type;
@@ -32,4 +33,12 @@ public class AuthenticatorConfiguration {
 		this.oauth2xsuaa = oauth2xsuaa;
 	}
 	
+	public OAuth2BearerAuthenticationConfiguration getOauth2bearer() {
+		return oauth2bearer;
+	}
+	
+	public void setOauth2bearer(OAuth2BearerAuthenticationConfiguration oauth2bearer) {
+		this.oauth2bearer = oauth2bearer;
+	}
+
 }
